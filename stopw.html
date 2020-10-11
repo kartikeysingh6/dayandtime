@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Clock</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="clock">
+		<h2>past, present and future are not consecutive</h2>
+		<div id="time">
+			<div><span id="day">0</span><span>Day</span></div>
+			<div><span id="hour">0</span><span>Hours</span></div>
+			<div><span id="min">0</span><span>Minutes</span></div>
+			<div><span id="sec">0</span><span>Seconds</span></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function clock(){
+			var h=new Date().getHours();
+			var m=new Date().getMinutes();
+			var s=new Date().getSeconds();
+			var d=new Date().getDay()
+			var dayname="";
+			if(d==0)
+				dayname="Sun";
+			if(d==1)
+				dayname="Mon";
+			if(d==2)
+				dayname="Tue";
+			if(d==3)
+				dayname="Wed";
+			if(d==4)
+				dayname="Thu";
+			if(d==5)
+				dayname="Fri";
+			if(d==6)
+				dayname="Sat";
+
+			document.getElementById('hour').innerHTML=h;
+			document.getElementById('min').innerHTML=m;
+			document.getElementById('sec').innerHTML=s;
+			document.getElementById('day').innerHTML=dayname;
+		}
+		var interval = setInterval(clock,1000);
+	</script>
+</body>
+</html>				
